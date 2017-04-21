@@ -5,7 +5,7 @@
     "main": "./src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "browserify ./src > dist/pingpong.js"
+        "build": "mkdir -p dist && browserify ./src > dist/pingpong.js"
     },
     "repository": {
         "type": "git",

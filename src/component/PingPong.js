@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Table from "./Table";
 import Play from "./Play";
 import Stop from "./Stop";
+import {statuses} from "./../constant/tableStatus";
 
 class PingPong extends React.PureComponent {
     constructor(props) {
@@ -15,8 +16,8 @@ class PingPong extends React.PureComponent {
                 <Table status={this.props.tableStatus}/>
 
                 <div>
-                    <Play />
-                    <Stop />
+                    <Play onPlay={this.props.onPlayClick} />
+                    <Stop onStop={this.props.onStopClick} />
                 </div>
             </div>
         );
@@ -24,7 +25,9 @@ class PingPong extends React.PureComponent {
 }
 
 PingPong.propTypes = {
-    tableStatus: PropTypes.string.isRequired,
+    tableStatus: PropTypes.oneOf(statuses).isRequired,
+    onPlayClick: PropTypes.func.isRequired,
+    onStopClick: PropTypes.func.isRequired,
 };
 
 export default PingPong;

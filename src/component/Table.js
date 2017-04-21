@@ -22,7 +22,7 @@ class Table extends React.PureComponent {
     render() {
         return (
             <div className="Table" style={this.getStyle()}>
-                {status}
+                {this.props.status}
             </div>
         );
     }

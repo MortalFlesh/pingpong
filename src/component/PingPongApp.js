@@ -1,5 +1,5 @@
 import React from "react";
-import PingPongContainer from "./../container/pingPongContainer";
+import PingPongContainer from "./../container/PingPongContainer";
 
 class PingPongApp extends React.Component {
     render() {
