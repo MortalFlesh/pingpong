@@ -2,7 +2,9 @@ import {connect} from "react-redux";
 import PingPong from "../component/PingPong";
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+        tableStatus: '',
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
