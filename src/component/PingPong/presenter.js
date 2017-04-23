@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Table from "./Table";
-import Play from "./Play";
-import Stop from "./Stop";
-import {statuses} from "./../constant/tableStatus";
+import Table from "./../Table";
+import Play from "./../Play";
+import Stop from "./../Stop";
+import {statuses} from "./../../constant/tableStatus";
 
 class PingPong extends React.PureComponent {
     constructor(props) {

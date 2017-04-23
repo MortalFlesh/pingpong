@@ -5,7 +5,7 @@ const initialState = {
     isPlaying: false,
 };
 
-const pingPong = (state = initialState, action) => {
+export default (state = initialState, action) => {
     console.log('Reducer<PingPong>:', state, `[${action.type}]`);
 
     switch (action.type) {
@@ -24,5 +24,3 @@ const pingPong = (state = initialState, action) => {
             return state;
     }
 };
-
-export default pingPong;

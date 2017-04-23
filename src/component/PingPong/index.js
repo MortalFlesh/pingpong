@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
-import PingPong from "../component/PingPong";
-import {play, stop} from "./../action/pingPongActions";
-import {STOP} from "./../constant/tableStatus";
+import PingPong from "./presenter";
+import {play, stop} from "./../../action/pingPong";
+import {STOP} from "./../../constant/tableStatus";
 
 const mapStateToProps = (state) => {
     console.log('Container<PingPong>:', state);
@@ -25,9 +25,7 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-const PingPongContainer = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(PingPong);
-
-export default PingPongContainer;
