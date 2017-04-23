@@ -4,11 +4,12 @@ import {play, stop} from "./../../action/pingPong";
 import {STOP} from "./../../constant/tableStatus";
 
 const mapStateToProps = (state) => {
-    console.log('Container<PingPong>:', state);
+    const {pingPong} = state;
+    console.log('Container<PingPong>:', pingPong);
     console.log('=================================');
 
     return {
-        tableStatus: state.isPlaying ? state.tableStatus : STOP,
+        tableStatus: pingPong.isPlaying ? pingPong.tableStatus : STOP,
     };
 };
 
