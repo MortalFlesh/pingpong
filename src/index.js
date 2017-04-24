@@ -1,11 +1,11 @@
+import "rxjs";
 import React from "react";
 import {render} from "react-dom";
 import {Provider} from "react-redux";
-import {createStore} from "redux";
-import pingPongApp from "./reducer";
 import PingPongApp from "./component/PingPong";
+import configureStore from "./store/configureStore";
 
-const store = createStore(pingPongApp);
+const store = configureStore();
 
 render(
     <Provider store={store}>

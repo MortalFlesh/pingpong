@@ -1,15 +1,15 @@
 import {connect} from "react-redux";
 import PingPong from "./presenter";
-import {play, stop} from "./../../action/pingPong";
+import {play, stop} from "./../../action";
 import {STOP} from "./../../constant/tableStatus";
 
 const mapStateToProps = (state) => {
-    const {pingPong} = state;
-    console.log('Container<PingPong>:', pingPong);
+    const {pingPong, table} = state;
+    console.log('Container<PingPong>:', {isPlaying: pingPong.isPlaying, status: table.status});
     console.log('=================================');
 
     return {
-        tableStatus: pingPong.isPlaying ? pingPong.tableStatus : STOP,
+        tableStatus: pingPong.isPlaying ? table.status : STOP,
     };
 };
 
