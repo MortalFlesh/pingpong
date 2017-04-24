@@ -27,7 +27,8 @@ export const playEpic = (action$, {getState}) =>
                     getState().table.status === tableStatus.PING
                         ? Observable.of(1).map(pong)
                         : Observable.of(1).map(ping)
-                );
+                )
+                .takeUntil(action$.ofType(STOP));
         });
 
 function ping() {
