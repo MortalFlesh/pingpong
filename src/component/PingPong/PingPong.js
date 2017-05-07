@@ -8,15 +8,15 @@ import Stop from "./../Stop";
 
 class PingPong extends React.PureComponent {
     render() {
-        const {tableStatus, onPlayClick, onStopClick} = this.props;
+        const {tableStatus, play, stop} = this.props;
 
         return (
             <div className="PingPong">
                 <Table status={tableStatus}/>
 
                 <div>
-                    <Play onPlay={onPlayClick}/>
-                    <Stop onStop={onStopClick}/>
+                    <Play onPlay={play}/>
+                    <Stop onStop={stop}/>
                 </div>
             </div>
         );
@@ -25,8 +25,8 @@ class PingPong extends React.PureComponent {
 
 PingPong.propTypes = {
     tableStatus: PropTypes.oneOf(STATUSES).isRequired,
-    onPlayClick: PropTypes.func.isRequired,
-    onStopClick: PropTypes.func.isRequired,
+    play: PropTypes.func.isRequired,
+    stop: PropTypes.func.isRequired,
 };
 
 export default PingPong;
