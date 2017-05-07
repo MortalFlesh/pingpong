@@ -1,30 +1,18 @@
 import {connect} from "react-redux";
-import PingPong from "./presenter";
-import {play, stop} from "./../../action";
-import {STOP} from "./../../constant/tableStatus";
+import {bindActionCreators} from "redux";
+import {play, stop} from "./action";
+import {STATUS_STOP} from "./constant";
+import PingPong from "./PingPong";
 
-const mapStateToProps = (state) => {
-    const {pingPong, table} = state;
-    console.log('Container<PingPong>:', {isPlaying: pingPong.isPlaying, status: table.status});
-    console.log('=================================');
+const mapStateToProps = ({pingPong, table}) => ({
+    tableStatus: pingPong.isPlaying ? table.status : STATUS_STOP,
+});
 
-    return {
-        tableStatus: pingPong.isPlaying ? table.status : STOP,
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onPlayClick() {
-            console.log('Container<PingPong>.onPlayClick(dispatch)');
-            dispatch(play());
-        },
-        onStopClick() {
-            console.log('Container<PingPong>.onStopClick(dispatch)');
-            dispatch(stop());
-        },
-    };
-};
+const mapDispatchToProps = (dispatch) =>
+    bindActionCreators({
+        onPlayClick: play,
+        onStopClick: stop,
+    }, dispatch);
 
 export default connect(
     mapStateToProps,

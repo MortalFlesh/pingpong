@@ -2,10 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Link extends React.PureComponent {
-    constructor(props) {
-        super(props);
-    }
-
     getStyle() {
         return {
             backgroundColor: this.props.color,
@@ -20,9 +16,11 @@ class Link extends React.PureComponent {
     }
 
     render() {
+        const {name, onClick} = this.props;
+
         return (
-            <button className="Link" style={this.getStyle()} onClick={this.props.onClick}>
-                {this.props.name}
+            <button className="Link" style={this.getStyle()} onClick={onClick}>
+                {name}
             </button>
         );
     }

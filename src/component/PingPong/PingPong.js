@@ -1,23 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {STATUSES} from "./constant";
+
 import Table from "./../Table";
 import Play from "./../Play";
 import Stop from "./../Stop";
-import {statuses} from "./../../constant/tableStatus";
 
 class PingPong extends React.PureComponent {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
+        const {tableStatus, onPlayClick, onStopClick} = this.props;
+
         return (
             <div className="PingPong">
-                <Table status={this.props.tableStatus}/>
+                <Table status={tableStatus}/>
 
                 <div>
-                    <Play onPlay={this.props.onPlayClick} />
-                    <Stop onStop={this.props.onStopClick} />
+                    <Play onPlay={onPlayClick}/>
+                    <Stop onStop={onStopClick}/>
                 </div>
             </div>
         );
@@ -25,7 +24,7 @@ class PingPong extends React.PureComponent {
 }
 
 PingPong.propTypes = {
-    tableStatus: PropTypes.oneOf(statuses).isRequired,
+    tableStatus: PropTypes.oneOf(STATUSES).isRequired,
     onPlayClick: PropTypes.func.isRequired,
     onStopClick: PropTypes.func.isRequired,
 };

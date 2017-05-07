@@ -1,18 +1,11 @@
 import React from "react";
-import Link from "./Link";
 import PropTypes from "prop-types";
+import Link from "./Link";
 
 class Stop extends React.PureComponent {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
-            <Link name="Stop" color="red" onClick={() => {
-                console.log('Button<Stop>.click()');
-                this.props.onStop();
-            }}/>
+            <Link name="Stop" color="red" onClick={this.props.onStop}/>
         );
     }
 }
