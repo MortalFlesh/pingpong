@@ -1,11 +1,9 @@
 import PingPongState from "./../record/pingPongState";
-import {PLAY, STOP} from "./../constant/actions";
+import {PLAY, STOP} from "./../constant";
 
 const initialState = new PingPongState();
 
 export default (state = initialState, action) => {
-    console.log('Reducer<PingPong>:', state.toJS(), `[${action.type}]`);
-
     switch (action.type) {
         case PLAY:
             return state.set('isPlaying', true);

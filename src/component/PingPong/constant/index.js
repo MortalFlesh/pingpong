@@ -1,0 +1,9 @@
+import {STATUS_PING, STATUS_PLAY, STATUS_PONG, STATUS_STOP, STATUSES} from "./tableStatus";
+import {PING, PLAY, PONG, STOP} from "./actions";
+import {ROUND_DURATION} from "./game";
+
+export {
+    STATUS_PING, STATUS_PLAY, STATUS_PONG, STATUS_STOP, STATUSES,
+    PING, PLAY, PONG, STOP,
+    ROUND_DURATION,
+}

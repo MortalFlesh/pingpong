@@ -2,10 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Table extends React.PureComponent {
-    constructor(props) {
-        super(props);
-    }
-
     getStyle() {
         return {
             width: 138,
