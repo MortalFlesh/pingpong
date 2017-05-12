@@ -1,6 +1,6 @@
 import {Observable} from "rxjs";
 import {PING, PLAY, PONG, ROUND_DURATION, STOP} from "./../constant";
-import {getService} from "./../../../service";
+import {getService, TYPES} from "./../../../service";
 
 export function play() {
     return {
@@ -19,7 +19,7 @@ export const playEpic = (action$, {getState}) =>
         .switchMap(() =>
             Observable.interval(ROUND_DURATION)
                 .switchMap(() =>
-                    getService('game').isPing(getState().table.status)
+                    getService(TYPES.Game).isPing(getState().table.status)
                         ? Observable.of(1).map(pong)
                         : Observable.of(1).map(ping)
                 )
