@@ -5,7 +5,8 @@
     "main": "./src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "mkdir -p dist && browserify ./src > dist/pingpong.js"
+        "build": "mkdir -p dist && browserify ./src > dist/pingpong.js",
+        "postbuild": "uglifyjs dist/pingpong.js > dist/pingpong.min.js"
     },
     "repository": {
         "type": "git",
@@ -26,7 +27,8 @@
         "babel-preset-react": "^6.24.1",
         "babelify": "^7.3.0",
         "browserify": "^11.1.0",
-        "flow-bin": "^0.46.0"
+        "flow-bin": "^0.46.0",
+        "uglify-js": "^3.0.4"
     },
     "browserify": {
         "transform": [
