@@ -1,4 +1,3 @@
-import {inject} from "./ioc";
 import {STATUS_PING} from "./../component/PingPong/constant";
 
 class Game {
@@ -6,6 +5,5 @@ class Game {
         return status === STATUS_PING;
     }
 }
-inject(Game);
 
 export default Game;

@@ -1,11 +1,15 @@
 import {Container} from "inversify";
+import {helpers} from "inversify-vanillajs-helpers";
 import TYPES from "./types";
 import Game from "./game";
 
-const container = new Container();
+let container = {};
 
 export function createContainer() {
-    container.bind(TYPES.Game).to(Game);
+    container = new Container();
+    const register = helpers.register(container);
+
+    register(TYPES.Game)(Game);
 }
 
 export {container};
