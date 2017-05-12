@@ -4,7 +4,9 @@ import {render} from "react-dom";
 import {Provider} from "react-redux";
 import PingPongApp from "./component/PingPong";
 import {configureStore} from "./component/PingPong/store";
+import {createContainer} from "./service";
 
+createContainer();
 const store = configureStore();
 
 render(
