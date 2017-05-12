@@ -4,8 +4,8 @@ import Game from "./game";
 
 const container = new Container();
 
-export function createContainer() {
-    container.bind(TYPES.Game).to(Game);
+export function createContainer(): void {
+    container.bind<Game>(TYPES.Game).to(Game);
 }
 
 export {container};

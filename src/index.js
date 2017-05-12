@@ -1,4 +1,5 @@
 import "rxjs";
+import "core-js/es7";
 import "reflect-metadata";
 import React from "react";
 import {render} from "react-dom";
