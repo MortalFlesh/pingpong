@@ -1,17 +1,11 @@
+import {Container} from "inversify";
+import TYPES from "./types";
 import Game from "./game";
 
-let container = {};
+const container = new Container();
 
 export function createContainer() {
-    return container = {
-        game: new Game(),
-    };
+    container.bind(TYPES.Game).to(Game);
 }
 
-export function getService(service) {
-    if (!container.hasOwnProperty(service)) {
-        throw `Service ${service} is not in container!`;
-    }
-
-    return container[service];
-}
+export {container};
