@@ -1,1 +1,2 @@
-export const ROUND_DURATION = 2000;
+// @flow
+export const ROUND_DURATION: number = 2000;

@@ -1,37 +1,44 @@
+// @flow
+import type {State} from "./../reducer";
+import type {Action, Store} from "./../../../flow/types";
+
 import {Observable} from "rxjs";
 import {PING, PLAY, PONG, ROUND_DURATION, STATUS_PING, STOP} from "./../constant";
 
-export function play() {
+export function play(): Action {
     return {
         type: PLAY,
     }
 }
 
-export function stop() {
+export function stop(): Action {
     return {
         type: STOP,
     }
 }
 
-export const playEpic = (action$, {getState}) =>
+export const playEpic = (action$: Observable, {getState}: Store): Observable =>
     action$.ofType(PLAY)
         .switchMap(() =>
             Observable.interval(ROUND_DURATION)
-                .switchMap(() =>
-                    getState().table.status === STATUS_PING
-                        ? Observable.of(1).map(pong)
-                        : Observable.of(1).map(ping)
+                .switchMap(() => isPing(getState)
+                    ? Observable.of(1).map(pong)
+                    : Observable.of(1).map(ping)
                 )
                 .takeUntil(action$.ofType(STOP))
         );
 
-function ping() {
+function isPing(getState: () => State): boolean {
+    return getState().table.status === STATUS_PING;
+}
+
+function ping(): Action {
     return {
         type: PING,
     }
 }
 
-function pong() {
+function pong(): Action {
     return {
         type: PONG,
     }
