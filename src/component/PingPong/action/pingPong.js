@@ -21,10 +21,7 @@ export const playEpic = (action$: Observable, {getState}: Store): Observable =>
     action$.ofType(PLAY)
         .switchMap(() =>
             Observable.interval(ROUND_DURATION)
-                .switchMap(() => isPing(getState)
-                    ? Observable.of(1).map(pong)
-                    : Observable.of(1).map(ping)
-                )
+                .map(() => isPing(getState) ? pong() : ping())
                 .takeUntil(action$.ofType(STOP))
         );
 
