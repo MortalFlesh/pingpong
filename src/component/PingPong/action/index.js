@@ -1,12 +1,7 @@
 import {combineEpics} from "redux-observable";
-import {play, playEpic, stop} from "./pingPong";
+import {playEpic} from "./pingPong";
+export {play, stop} from "./pingPong";
 
-const rootEpic = combineEpics(
+export const rootEpic = combineEpics(
     playEpic,
 );
-
-export {
-    play,
-    stop,
-    rootEpic,
-};

@@ -7,7 +7,4 @@ const mapStateToProps = ({pingPong, table}) => ({
     tableStatus: pingPong.isPlaying ? table.status : STATUS_STOP,
 });
 
-export default connect(
-    mapStateToProps,
-    actions
-)(PingPong);
+export default connect(mapStateToProps, actions)(PingPong);
