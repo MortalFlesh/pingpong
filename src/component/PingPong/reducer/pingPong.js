@@ -1,9 +1,12 @@
+// @flow
+import type {Action} from "./../../../flow/types";
+
 import PingPongState from "./../record/pingPongState";
 import {PLAY, STOP} from "./../constant";
 
 const initialState = new PingPongState();
 
-export default (state = initialState, action) => {
+export default (state: PingPongState = initialState, action: Action): PingPongState => {
     switch (action.type) {
         case PLAY:
             return state.set('isPlaying', true);
