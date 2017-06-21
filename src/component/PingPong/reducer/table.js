@@ -1,5 +1,5 @@
 // @flow
-import type {Action} from "./../../../flow/types";
+import type {Action} from "../../../flow/type";
 
 import TableState from "./../record/tableState";
 import {PING, PLAY, PONG, STATUS_PING, STATUS_PLAY, STATUS_PONG} from "./../constant";

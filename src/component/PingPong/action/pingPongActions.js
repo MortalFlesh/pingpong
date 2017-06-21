@@ -1,6 +1,6 @@
 // @flow
 import type {State} from "./../reducer";
-import type {Action, Store} from "./../../../flow/types";
+import type {Action, Store} from "../../../flow/type";
 
 import {Observable} from "rxjs";
 import {PING, PLAY, PONG, ROUND_DURATION, STATUS_PING, STOP} from "./../constant";
